@@ -10,8 +10,10 @@
   background-color: aqua;
   box-sizing: border-box;
   border: 2px solid black;
+  transition-duration: 5s;
 }
 
 .tile.hover-over {
     background-color: red;
+    transition-duration: 0s;
 }

@@ -43,4 +43,4 @@ function removeBoardTiles() {
 }
 
 // Generate the webpage
-fillBoardWithTiles(64);
+fillBoardWithTiles(1000);
