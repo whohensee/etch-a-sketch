@@ -10,8 +10,5 @@
 .tile {
   background-color: aqua;
   box-sizing: border-box;
-  width: 200px;
-  height: 200px;
-  padding: 5px;
   border: 2px solid black;
 }

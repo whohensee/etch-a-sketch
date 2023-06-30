@@ -1,16 +1,23 @@
 "use strict";
 
 const sketchBoard = document.querySelector("#sketch-board");
+const sketchBoardStyle = document.querySelector(".tile");
+const boardWidth = 800;
 
-function createTile() {
+function createTile(tileWidth) {
   const tile = document.createElement("div");
   tile.classList.add("tile");
+  tile.setAttribute("style", `width: ${tileWidth}px; height: ${tileWidth}px`);
   return tile;
 }
 
 function fillBoardWithTiles(N) {
-  for (let i = 0; i < N; i++) {
-    const tile = createTile();
+  // calculate the sizes of each tile
+  const tilesPerRow = Math.floor(Math.sqrt(N));
+  const tileWidth = boardWidth / tilesPerRow;
+
+  for (let i = 0; i < tilesPerRow ** 2; i++) {
+    const tile = createTile(tileWidth);
     sketchBoard.appendChild(tile);
   }
 }
@@ -24,4 +31,4 @@ function removeBoardTiles() {
 }
 
 // Generate the webpage
-fillBoardWithTiles(16);
+fillBoardWithTiles(64);
