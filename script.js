@@ -8,7 +8,19 @@ function createTile(tileWidth) {
   const tile = document.createElement("div");
   tile.classList.add("tile");
   tile.setAttribute("style", `width: ${tileWidth}px; height: ${tileWidth}px`);
+
+  // add an event listener for mouseover
+  tile.addEventListener("mouseover", changeToOver);
+  tile.addEventListener("mouseout", changeFromOver);
   return tile;
+}
+
+function changeToOver(e) {
+  this.classList.add("hover-over");
+}
+
+function changeFromOver(e) {
+  this.classList.remove("hover-over");
 }
 
 function fillBoardWithTiles(N) {
